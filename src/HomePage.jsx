@@ -44,8 +44,18 @@ export default function HomePage() {
               Find verified farmers across India growing varieties like IR64, Sona Masoori, BPT, and more.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-green-800 text-white px-6 py-2 rounded font-semibold shadow hover:bg-green-900 transition">Browse Paddy</button>
-              <button className="border border-green-800 text-green-800 px-6 py-2 rounded font-semibold bg-white hover:bg-green-50 transition">Contact a Farmer</button>
+              <button
+                className="bg-green-800 text-white px-6 py-2 rounded font-semibold shadow hover:bg-green-900 transition"
+                onClick={() => navigate('/BrowsePaddy')}
+              >
+                Browse Paddy
+              </button>
+              <button
+                className="border border-green-800 text-green-800 px-6 py-2 rounded font-semibold bg-white hover:bg-green-50 transition"
+                onClick={() => navigate('/ContactFarmer')}
+              >
+                Contact a Farmer
+              </button>
             </div>
           </div>
           <div className="flex justify-center order-1 md:order-2 mb-8 md:mb-0">

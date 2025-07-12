@@ -5,6 +5,8 @@ import AboutUs from './AboutUs';
 import ForFarmers from './ForFarmers';
 import BulkOrders from './BulkOrders';
 import PaddyListings from './PaddyListings';
+import BrowsePaddy from './BrowsePaddy';
+import ContactFarmer from './ContactFarmer';
 
 export default function App() {
   return (
@@ -15,6 +17,8 @@ export default function App() {
         <Route path="/ForFarmers" element={<ForFarmers />} />
         <Route path="/BulkOrders" element={<BulkOrders />} />
         <Route path="/PaddyListings" element={<PaddyListings />} />
+        <Route path="/BrowsePaddy" element={<BrowsePaddy />} />
+        <Route path="/ContactFarmer" element={<ContactFarmer />} />
       </Routes>
     </Router>
   );
