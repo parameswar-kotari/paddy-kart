@@ -1,40 +1,13 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Layout from './Layout';
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
-    <div className="bg-[#fffbe6] text-gray-900 font-sans">
-      {/* Header */}
-      <header className="bg-[#fffbe6] border-b border-gray-200 px-6 py-4 flex flex-col md:flex-row md:justify-between md:items-center relative">
-        <div className="flex justify-between items-center w-full md:w-auto">
-          <h1 className="text-xl font-bold text-green-900 flex items-center space-x-2">
-            <span>🌾</span>
-            <span>PaddyKart</span>
-          </h1>
-          {/* Hamburger menu icon for mobile */}
-          <button
-            className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-green-700"
-            aria-label="Open menu"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <svg className="w-7 h-7 text-green-900" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-        {/* Nav links */}
-        <nav
-          className={`flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0 items-start md:items-center w-full md:w-auto flex ${menuOpen ? 'flex' : 'hidden'} md:flex bg-[#fffbe6] md:bg-transparent absolute md:static top-full left-0 md:top-auto md:left-auto shadow md:shadow-none z-20 md:z-auto p-6 md:p-0 rounded-b-xl md:rounded-none`}
-        >
-          <a href="#" className="hover:text-green-700">Home</a>
-          <a href="#" className="hover:text-green-700">About Us</a>
-          <a href="#" className="hover:text-green-700">For Farmers</a>
-          <a href="#" className="hover:text-green-700">Bulk Orders</a>
-          <button className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 mt-2 md:mt-0">Sell Your Paddy</button>
-        </nav>
-      </header>
-
+    <Layout>
       {/* Hero Section */}
       <section
         className="relative bg-green-100 px-4 sm:px-8 py-20 min-h-[480px] flex items-center"
@@ -53,7 +26,10 @@ export default function HomePage() {
           <p className="text-lg text-green-900 max-w-xl drop-shadow-xl mb-6 font-medium">
             Connecting paddy farmers to bulk buyers, rice mills, and vendors — no middlemen involved.
           </p>
-          <button className="bg-green-800 text-white px-8 py-3 rounded text-lg font-semibold shadow hover:bg-green-900 transition">
+          <button
+            className="bg-green-800 text-white px-8 py-3 rounded text-lg font-semibold shadow hover:bg-green-900 transition"
+            onClick={() => navigate('/PaddyListings')}
+          >
             Explore Paddy Listings
           </button>
         </div>
@@ -127,11 +103,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-[#fffbe6] border-t border-gray-200 px-6 py-4 text-center text-gray-600 text-sm">
-        © 2025 PaddyKart. Empowering India’s Farmers.
-      </footer>
-    </div>
+    </Layout>
   );
 }
