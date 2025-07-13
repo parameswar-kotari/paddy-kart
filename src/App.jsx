@@ -7,6 +7,7 @@ import BulkOrders from './BulkOrders';
 import PaddyListings from './PaddyListings';
 import BrowsePaddy from './BrowsePaddy';
 import ContactFarmer from './ContactFarmer';
+import FarmerCrops from './FarmerCrops';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/PaddyListings" element={<PaddyListings />} />
         <Route path="/BrowsePaddy" element={<BrowsePaddy />} />
         <Route path="/ContactFarmer" element={<ContactFarmer />} />
+        <Route path="/FarmerCrops" element={<FarmerCrops />} />
       </Routes>
     </Router>
   );

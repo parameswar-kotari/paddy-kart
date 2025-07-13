@@ -31,7 +31,7 @@ export default function Layout({ children }) {
           <Link to="/AboutUs" className="hover:text-green-700">About Us</Link>
           <Link to="/ForFarmers" className="hover:text-green-700">For Farmers</Link>
           <Link to="/BulkOrders" className="hover:text-green-700">Bulk Orders</Link>
-          <button className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 mt-2 md:mt-0">Sell Your Paddy</button>
+          <button className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 mt-2 md:mt-0" onClick={() => window.location.href='/FarmerCrops'}>Sell Your Paddy</button>
         </nav>
       </header>
       <main className="flex-1">
